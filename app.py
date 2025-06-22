@@ -1,6 +1,8 @@
 import streamlit as st
 from dotenv import load_dotenv
 from utils import *
+from utils import create_docs
+import os
 
 
 def main():
