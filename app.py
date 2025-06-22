@@ -5,6 +5,8 @@ from utils import *
 
 def main():
     load_dotenv()
+    print("Loaded API Key:", os.getenv("OPENAI_API_KEY"))
+
 
     st.set_page_config(page_title="Invoice Extraction Bot")
     st.title("Invoice Extraction Bot...💁 ")
