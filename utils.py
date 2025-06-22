@@ -1,6 +1,7 @@
 #As Langchain team has been working aggresively on improving the tool, we can see a lot of changes happening every weeek,
 #As a part of it, the below import has been depreciated
 #from langchain.llms import OpenAI
+import os
 from langchain_openai import OpenAI
 
 from pypdf import PdfReader
@@ -9,6 +10,7 @@ import pandas as pd
 import re
 import replicate
 from langchain.prompts import PromptTemplate
+import os
 
 #Extract Information from PDF file
 def get_pdf_text(pdf_doc):
@@ -30,7 +32,8 @@ def extracted_data(pages_data):
         """
     prompt_template = PromptTemplate(input_variables=["pages"], template=template)
 
-    llm = OpenAI(temperature=.7)
+    
+    llm = OpenAI(temperature=0.7, openai_api_key=os.getenv("OPENAI_API_KEY"))
     full_response=llm(prompt_template.format(pages=pages_data))
     
 
