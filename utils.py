@@ -4,7 +4,7 @@
 from langchain_openai import OpenAI
 
 from pypdf import PdfReader
-#from langchain.llms.openai import OpenAI
+from langchain.llms.openai import OpenAI
 import pandas as pd
 import re
 import replicate
